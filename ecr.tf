@@ -29,7 +29,7 @@ resource "null_resource" "deploy_image" {
   }
 
   provisioner "local-exec" {
-    command = "cd ..; bash deploy_image.sh;"
+    command = "bash deploy_image.sh;"
   }
 
   depends_on = [aws_ecr_repository.main]
