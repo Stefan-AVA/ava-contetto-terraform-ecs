@@ -5,4 +5,4 @@ echo "${ENV_FILE}" > .env
 ecr=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
 image=${ecr}/${SERVICE_NAME}_${CI_COMMIT_REF_NAME}:latest
 
-docker build -t --build-arg NPM_ACCESS_TOKEN=${NPM_ACCESS_TOKEN} ${image} .
+docker build --build-arg NPM_ACCESS_TOKEN=${NPM_ACCESS_TOKEN} -t ${image} .
