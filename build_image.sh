@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "${ENV_FILE}" > .env
+echo "${NEXT_ENV_FILE}" > .env.local
 
 ecr=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
 image=${ecr}/${SERVICE_NAME}_${CI_COMMIT_REF_NAME}:latest
