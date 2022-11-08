@@ -6,8 +6,8 @@ resource "aws_alb_target_group" "main" {
   target_type = "ip"
 
   health_check {
-    protocol            = "HTTP"
-    path                = var.path_pattern
+    protocol            = "HTTPS"
+    path                = var.health_check_path ? var.health_check_path : var.path_pattern
     healthy_threshold   = 2
     unhealthy_threshold = 10
     timeout             = 60
