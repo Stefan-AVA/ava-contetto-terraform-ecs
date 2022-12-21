@@ -22,7 +22,7 @@ export TF_VAR_cluster_id=arn:aws:ecs:${AWS_DEFAULT_REGION}:${AWS_ACCOUNT_ID}:clu
 terraform -chdir="terraform" init \
     -backend-config="bucket=${BUCKET_NAME}" \
     -backend-config="key=${APP_NAME}/${SERVICE_NAME}/${CI_COMMIT_REF_NAME}.tfstate" \
-    -backend-config="region=${AWS_DEFAULT_REGION}"
+    -backend-config="region=${AWS_BUCKET_REGION}"
 
 
 
