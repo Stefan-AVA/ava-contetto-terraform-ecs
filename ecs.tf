@@ -10,8 +10,8 @@ resource "aws_ecs_task_definition" "main" {
   # container_definitions = file("container-def.json")
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = 256
-  memory                   = 512
+  cpu                      = var.cpu
+  memory                   = var.memory
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   # task_role_arn            = aws_iam_role.ecs_task_role.arn
   depends_on = [null_resource.deploy_image]
@@ -43,7 +43,7 @@ resource "aws_ecs_service" "main" {
   name                               = "${var.service_name}-service"
   cluster                            = var.cluster_id
   task_definition                    = aws_ecs_task_definition.main.arn
-  desired_count                      = 1
+  desired_count                      = var.desired_count
   deployment_minimum_healthy_percent = 100
   deployment_maximum_percent         = 200
   launch_type                        = "FARGATE"

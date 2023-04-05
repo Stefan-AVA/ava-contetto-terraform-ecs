@@ -53,3 +53,24 @@ variable "container_port" {
 variable "health_check_path" {
   type = string
 }
+
+
+variable "max_capacity" {
+  type = number
+}
+
+variable "min_capacity" {
+  type = number
+}
+
+variable "desired_count" {
+  type = number
+}
+
+variable "cpu" {
+  type = number
+}
+
+variable "memory" {
+  type = number
+}
