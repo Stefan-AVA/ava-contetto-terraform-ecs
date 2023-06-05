@@ -27,7 +27,7 @@ variable "vpc_id" {
 }
 
 variable "subnet_ids" {
-    type = list(string)
+  type = list(string)
 }
 
 variable "listener_arn" {
@@ -35,7 +35,8 @@ variable "listener_arn" {
 }
 
 variable "path_pattern" {
-  type = string
+  type    = string
+  default = "/"
 }
 
 variable "cluster_id" {
@@ -43,11 +44,12 @@ variable "cluster_id" {
 }
 
 variable "cluster_name" {
-    type = string
+  type = string
 }
 
 variable "container_port" {
-  type = number
+  type    = number
+  default = 80
 }
 
 variable "health_check_path" {
@@ -56,21 +58,26 @@ variable "health_check_path" {
 
 
 variable "max_capacity" {
-  type = number
+  type    = number
+  default = 3
 }
 
 variable "min_capacity" {
-  type = number
+  type    = number
+  default = 1
 }
 
 variable "desired_count" {
-  type = number
+  type    = number
+  default = 1
 }
 
 variable "cpu" {
-  type = number
+  type    = number
+  default = 256
 }
 
 variable "memory" {
-  type = number
+  type    = number
+  default = 512
 }

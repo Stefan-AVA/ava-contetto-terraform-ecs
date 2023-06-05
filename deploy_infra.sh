@@ -1,8 +1,5 @@
 #!/bin/bash
 
-export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-
 export TF_VAR_app_name=${APP_NAME}
 export TF_VAR_service_name=${SERVICE_NAME}
 export TF_VAR_env=${CI_COMMIT_REF_NAME}
