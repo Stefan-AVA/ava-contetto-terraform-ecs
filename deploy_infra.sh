@@ -11,7 +11,6 @@ export TF_VAR_repo_name=${SERVICE_NAME}_${CI_COMMIT_REF_NAME}
 
 export TF_VAR_path_pattern=${PATH_PATTERN}
 export TF_VAR_container_port=${CONTAINER_PORT}
-export TF_VAR_health_check_path=${HEALTH_CHECK_PATH}
 
 export TF_VAR_vpc_id=${VPC_ID}
 export TF_VAR_subnet_ids=${SUBNET_IDS}
