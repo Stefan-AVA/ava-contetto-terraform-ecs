@@ -1,3 +1,7 @@
+variable "account_id" {
+  type = string
+}
+
 variable "app_name" {
   type = string
 }
@@ -39,10 +43,6 @@ variable "path_pattern" {
   default = "/"
 }
 
-variable "cluster_id" {
-  type = string
-}
-
 variable "cluster_name" {
   type = string
 }
@@ -53,7 +53,8 @@ variable "container_port" {
 }
 
 variable "health_check_path" {
-  type = string
+  type     = string
+  nullable = true
 }
 
 

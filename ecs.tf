@@ -41,14 +41,14 @@ resource "aws_ecs_task_definition" "main" {
 
 resource "aws_ecs_service" "main" {
   name                               = "${var.service_name}-service"
-  cluster                            = var.cluster_id
+  cluster                            = "arn:aws:ecs:${var.region}:${var.account_id}:cluster/${var.cluster_name}"
   task_definition                    = aws_ecs_task_definition.main.arn
   desired_count                      = var.desired_count
   deployment_minimum_healthy_percent = 100
   deployment_maximum_percent         = 200
   launch_type                        = "FARGATE"
   scheduling_strategy                = "REPLICA"
-  platform_version                   = "1.3.0"
+  platform_version                   = "LATEST"
   force_new_deployment               = true
 
   network_configuration {
